@@ -1,0 +1,26 @@
+model:
+  generator:
+    input_channels: 6
+    output_channels: 3
+    ngf: 64
+  discriminator:
+    input_channels: 3
+    ndf: 64
+  geometric_matching:
+    input_nc: 6
+
+training:
+  batch_size: 4
+  epochs: 100
+  lr: 0.0002
+  beta1: 0.5
+  lambda_l1: 100.0
+  lambda_vgg: 10.0
+  lambda_adv: 1.0
+  save_interval: 10
+
+data:
+  img_size: 256
+  train_dir: "dataset/train"
+  val_dir: "dataset/val"
+  test_dir: "dataset/test"
